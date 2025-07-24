@@ -1,12 +1,39 @@
-SAM Segmentation Project
-This project explores image and video segmentation using Meta’s Segment Anything Model (SAM 2.1). The goal is to demonstrate how SAM can be applied to real-world scenarios such as object detection, CCTV footage analysis, and scene understanding.
+# Person Segmentation from Images using YOLOv8 and SAM 2.1
+## Project Information
+In this project, I have used SAM 2.1 and YOLO v8n to extract images of people from the input image, remove background with high accuracy.
+## Libraries
 
-Using both static images and video frames, the project showcases:
+- torch
+- ultralytics
+## Neural Network
 
-Efficient segmentation of arbitrary objects
+- SAM2.1
+- YOLOv8
+```bash
+## 📁 Folder Structure
+project/
+│
+├── xyz.jpg # Input image (your image with people)
+├── person_1.jpg # Output cropped image (Person 1)
+├── person_2.jpg # Output cropped image (Person 2)
+├── person_3.jpg # Output cropped image (Person 3)
+├── person_segment.py # Main Python script
+```
+## Usage
+Step 1: Place your input image
+Make sure your image (e.g. xyz.jpg) is in the same folder as the script.<br>
+Step 2: Run the script<br>
+```bash
+python person_segment.py
+```
 
-Prompt-based interactions (e.g., point, box)
+## ⚙️ Requirements
 
-Real-time visualizations using SAM's high-accuracy masks
+Install the following dependencies:
 
-This serves as a foundation for advanced applications in retail monitoring, autonomous systems, and intelligent video analytics. Detailed Description will be given in the pdf.
+```bash
+pip install ultralytics opencv-python matplotlib torch torchvision
+```
+## Notes
+- YOLO provides rough bounding boxes; SAM refines them using image segmentation.
+- This combination ensures both detection speed and segmentation accuracy.
